@@ -1,5 +1,9 @@
 #lang sicp
 
+(#%require "math.rkt")
+
+(#%provide fixed-point)
+
 (define tolerance 0.00001)
 (define (fixed-point f first-guess)
   (define (close-enough? v1 v2)
@@ -16,8 +20,6 @@
 
 (fixed-point (lambda (y) (+ (* y y) (- (* 3 y)) 4))
              1.0)
-
-(define (average x y) (/ (+ x y) 2))
 
 (define (sqrt x)
   (fixed-point (lambda (y) (average y (/ x y)))

@@ -1,5 +1,13 @@
 #lang sicp
 (#%require "math.rkt")
+(#%provide make-point)
+(#%provide x-point)
+(#%provide y-point)
+(#%provide print-point)
+(#%provide make-segment)
+(#%provide start-segment)
+(#%provide end-segment)
+(#%provide midpoint-segment)
 
 
 (define (make-point x y)

@@ -17,6 +17,7 @@
 (#%provide compose)
 (#%provide repeated)
 (#%provide smooth)
+(#%provide exp)
 
 
 (define (average x y) (/ (+ x y) 2))
@@ -94,3 +95,11 @@
 (define (smooth f)
   (define dx 0.000001)
   (lambda (x) (/ (+ (f (- x dx)) (f x) (f (+ x dx))) 3)))
+
+(define (exp b n)
+  (define (square x) (* x x))
+  (define (func-iter n b a) 
+    (cond ((= 0 n) a) 
+          ((even? n) (func-iter (/ n 2) (square b) a)) 
+          (else (func-iter (- n 1) b (* b a))))) 
+  (func-iter n b 1))

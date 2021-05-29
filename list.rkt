@@ -14,6 +14,8 @@
 (#%provide accumulate)
 (#%provide enumerate-interval)
 (#%provide enumerate-tree)
+(#%provide flatmap)
+(#%provide remove)
 
 
 (define (list-ref items n)
@@ -121,3 +123,10 @@
         ((not (pair? tree)) (list tree))
         (else (append (enumerate-tree (car tree))
                       (enumerate-tree (cdr tree))))))
+
+(define (flatmap proc seq)
+  (accumulate append nil (map proc seq)))
+
+(define (remove item sequence)
+  (filter (lambda (x) (not (= x item)))
+          sequence))

@@ -9,7 +9,7 @@
 (#%provide smallest-divisor)
 (#%provide prime?)
 (#%provide identity)
-(#%provide accumulate)
+;(#%provide accumulate)
 (#%provide accumulate-filtered)
 (#%provide deriv)
 (#%provide newton-transform)
